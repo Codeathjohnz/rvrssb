@@ -3,9 +3,13 @@ import { Platform } from "react-native";
 
 import { getToken } from "../storage/auth";
 
-// Web (browser) can reach the backend via localhost.
-// Native (phone/emulator) needs the dev machine's LAN IP instead.
-const baseURL = Platform.OS === "web"
+// EXPO_PUBLIC_ vars are inlined into the bundle at build time, so a
+// production build can point at the real deployed backend instead of a
+// developer's machine. Falls back to local dev defaults when unset: web
+// reaches the backend via localhost, native needs the dev machine's LAN IP.
+const baseURL = process.env.EXPO_PUBLIC_API_URL
+    ? process.env.EXPO_PUBLIC_API_URL
+    : Platform.OS === "web"
     ? "http://localhost:5001"
     : "http://192.168.100.152:5001";
 
