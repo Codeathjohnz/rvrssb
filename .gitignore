@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Environment secrets
+.env
+.env.*.local
+backend/.env
+
+# Legacy/local-only
+RiceDSSMobile/
+Macasampon_Chapter 1-3.docx
+RiceDSSMobileExpo/backend/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+RiceDSSMobileExpo/ios/
+RiceDSSMobileExpo/android/
+
+# Native build artifacts
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.kotlin/
+
+# Metro / debug
+.metro-health-check*
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# TypeScript
+*.tsbuildinfo
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.pem
+
+# AI tool session/state folders (not part of the app)
+.claude/
+.qodo/
